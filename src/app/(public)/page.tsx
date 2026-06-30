@@ -226,7 +226,7 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.2}>
+          <Reveal index={2}>
             {/* 4-Image Instagram-style Static Grid */}
             <div className="grid grid-cols-2 gap-4">
               <div className="aspect-square relative rounded-2xl overflow-hidden group">

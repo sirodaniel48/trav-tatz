@@ -47,7 +47,7 @@ export async function POST(req: Request) {
           price_data: {
             currency: "usd",
             product_data: {
-              name: `Deposit for ${booking.service_type.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())} Appointment`,
+              name: `Deposit for ${booking.service_type.replace(/_/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase())} Appointment`,
               description: `Booking for ${new Date(booking.appointment_at).toLocaleString()}`,
             },
             unit_amount: depositAmountCents,

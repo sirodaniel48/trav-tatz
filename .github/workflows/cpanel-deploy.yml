@@ -1,0 +1,67 @@
+name: Deploy Next.js to cPanel
+
+on:
+  push:
+    branches:
+      - main # Change this if your primary branch is 'master'
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install Dependencies
+        run: npm ci
+
+      - name: 🏗️ Build Application
+        run: npm run build
+        env:
+          # Add any environment variables required DURING the build process here
+          # You only need the NEXT_PUBLIC_* ones for the build step.
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY }}
+          NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL }}
+
+      - name: 📁 Prepare Standalone Files
+        run: |
+          # The standalone output doesn't include the public or static folders by default, 
+          # so we must copy them into the standalone directory before deploying.
+          cp -r public .next/standalone/
+          cp -r .next/static .next/standalone/.next/
+
+      - name: 🚀 Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Path to deploy FROM (our prepared standalone folder)
+          local-dir: .next/standalone/
+          # Path to deploy TO on the server
+          server-dir: ./
+          # Ensures files deleted in git are removed from cPanel too
+          state-name: .ftp-deploy-sync-state.json
+
+      - name: 🔄 Restart Node.js Server
+        # Optional: If you don't have SSH access, you can remove this step and restart manually in cPanel.
+        uses: appleboy/ssh-action@v1.0.3
+        continue-on-error: true
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          # Phusion Passenger (cPanel Node.js) automatically restarts if you touch tmp/restart.txt
+          script: |
+            mkdir -p ~/booking.browinkconnect.com/tmp
+            touch ~/booking.browinkconnect.com/tmp/restart.txt
