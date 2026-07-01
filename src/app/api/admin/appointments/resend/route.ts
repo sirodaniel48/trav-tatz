@@ -26,7 +26,7 @@ export async function POST(req: Request) {
 
     // Attempt to send the email
     const { error: emailError } = await resend.emails.send({
-      from: "Trav Tatz <booking@travtatz.com>",
+      from: "DESINKS <booking@travtatz.com>",
       to: booking.client_email,
       subject: `Booking Update: Your appointment is ${booking.status}`,
       html: `
@@ -36,7 +36,7 @@ export async function POST(req: Request) {
           <p>This is a manual confirmation that your appointment on ${new Date(booking.appointment_at).toLocaleString()} has been marked as <strong>${booking.status}</strong>.</p>
           <p>Service: ${booking.service_type}</p>
           <br/>
-          <p>Thanks,<br/>Trav Tatz Studio</p>
+          <p>Thanks,<br/>DESINKS Studio</p>
         </div>
       `,
     });

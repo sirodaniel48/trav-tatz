@@ -10,7 +10,7 @@ export function Footer() {
           <div className="relative w-40 h-16 mb-3 -ml-2">
             <img 
               src="/logo.jpg" 
-              alt="Trav-Tatz" 
+              alt="DESINKS" 
               className="w-full h-full object-contain invert mix-blend-screen"
             />
           </div>
@@ -91,23 +91,21 @@ export function Footer() {
               booking@travtatz.com
             </a>
             <a 
-              href="tel:+15551234567" 
+              href="tel:+16054502811" 
               className="font-body text-sm text-text-warm/80 hover:text-accent hover:underline decoration-accent underline-offset-4 transition-colors focus:outline-none focus:ring-2 focus:ring-accent rounded-sm"
             >
-              (555) 123-4567
+              +1 (605) 450-2811
             </a>
             <div className="mt-2">
               <a 
-                href="https://instagram.com" 
+                href="https://www.tiktok.com/@desinks?_r=1&_t=ZS-97fVsMSfzxB" 
                 target="_blank" 
                 rel="noreferrer"
-                aria-label="Instagram"
+                aria-label="TikTok"
                 className="text-text-warm/80 hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent rounded-sm inline-block"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                  <path d="M9 12a4 4 0 1 0 4 4V4h3.5a5.5 5.5 0 0 0 5.5 5.5v3a8.5 8.5 0 0 1-5.5-2v7.5a7 7 0 1 1-7-7v3a4 4 0 0 0 4 4z"/>
                 </svg>
               </a>
             </div>
@@ -119,7 +117,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="border-t border-border-dark pt-6 pb-8 mt-4 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="font-body text-xs text-text-warm/50">
-            &copy; {new Date().getFullYear()} Trav-Tatz. All rights reserved.
+            &copy; {new Date().getFullYear()} DESINKS. All rights reserved.
           </p>
           <p className="font-body text-xs text-text-warm/50">
             All deposits go toward your service cost. See booking policy for details.

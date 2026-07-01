@@ -22,7 +22,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Trav-Tatz | Tattoos, Lashes & Eyebrows | Atlanta, GA",
+  title: "DESINKS | Tattoos, Lashes & Eyebrows | Atlanta, GA",
   description: "Premium tattoo and beauty studio in Atlanta, GA. Book online — $35 deposit, guest checkout.",
   openGraph: { locale: "en_US" },
   icons: {
@@ -50,7 +50,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "BeautySalon",
-              "name": "Trav-Tatz",
+              "name": "DESINKS",
               "image": "/logo.jpg",
               "description": "Premium tattoo and beauty studio in Atlanta, GA.",
               "address": {

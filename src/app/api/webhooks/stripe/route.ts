@@ -79,7 +79,7 @@ export async function POST(req: Request) {
             resend.emails.send({
               from: process.env.EMAIL_FROM || "bookings@travtatz.com",
               to: booking.client_email,
-              subject: "Your Trav-Tatz Appointment is Confirmed",
+              subject: "Your DESINKS Appointment is Confirmed",
               html: clientHtml,
             }),
             // Owner email

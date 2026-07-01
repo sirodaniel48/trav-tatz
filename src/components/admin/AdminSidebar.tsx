@@ -16,7 +16,7 @@ export function AdminSidebar() {
       {/* Mobile Top Bar with Hamburger */}
       <div className="md:hidden flex items-center justify-between p-4 bg-surface border-b border-border-dark sticky top-0 z-40">
         <div>
-          <h2 className="font-display text-xl font-bold text-accent">Trav-Tatz</h2>
+          <h2 className="font-display text-xl font-bold text-accent">DESINKS</h2>
           <p className="text-[10px] text-text-warm/50 font-mono">Admin Panel</p>
         </div>
         <button 
@@ -43,7 +43,7 @@ export function AdminSidebar() {
         ${isOpen ? "translate-x-0" : "-translate-x-full"}
       `}>
         <div className="p-6 border-b border-border-dark hidden md:block">
-          <h2 className="font-display text-2xl font-bold text-accent">Trav-Tatz</h2>
+          <h2 className="font-display text-2xl font-bold text-accent">DESINKS</h2>
           <p className="text-xs text-text-warm/50 font-mono mt-1">Admin Panel</p>
         </div>
         

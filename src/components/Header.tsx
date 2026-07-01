@@ -27,7 +27,7 @@ export function Header() {
           <Link href="/" className="relative h-12 w-32 -ml-2 hover:scale-105 transition-transform duration-300">
             <img 
               src="/logo.jpg" 
-              alt="Trav-Tatz" 
+              alt="DESINKS" 
               className="w-full h-full object-contain invert mix-blend-screen"
             />
           </Link>

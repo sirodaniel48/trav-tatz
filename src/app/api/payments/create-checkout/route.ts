@@ -38,6 +38,8 @@ export async function POST(req: Request) {
     // Default to 3500 if the service_type doesn't match our exact keys for some reason
     const depositAmountCents = DEPOSITS[booking.service_type] || 3500;
 
+    const origin = req.headers.get("origin") || process.env.NEXT_PUBLIC_BASE_URL || "https://booking.browinkconnect.com";
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
@@ -58,8 +60,8 @@ export async function POST(req: Request) {
       metadata: {
         bookingId: booking.id,
       },
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/book/confirmation?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/book`,
+      success_url: `${origin}/book/confirmation?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}/book`,
     });
 
     return NextResponse.json({ url: session.url });

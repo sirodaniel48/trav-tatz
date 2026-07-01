@@ -78,7 +78,7 @@ export default function Home() {
         {/* Large Watermark */}
         <div className="absolute top-1/2 -translate-y-1/2 w-full text-center pointer-events-none select-none z-0">
           <h2 className="font-display font-light text-[12vw] leading-none text-white/[0.02] tracking-tighter">
-            TRAV-TATZ
+            DESINKS
           </h2>
         </div>
 
@@ -91,7 +91,7 @@ export default function Home() {
             variants={heroFadeUp}
             className="mb-6 font-mono text-[11px] tracking-[0.3em] uppercase text-text-warm/60"
           >
-            Trav-Tatz Studio
+            DESINKS Studio
           </motion.div>
 
           <motion.h1
@@ -216,11 +216,11 @@ export default function Home() {
               <span className="font-mono text-[11px] tracking-[0.2em] uppercase text-text-warm/50 block mb-4">About the Studio</span>
               <h2 className="text-4xl md:text-5xl font-display leading-tight">Mastering the Craft</h2>
               <p className="text-text-warm/70 text-lg leading-relaxed font-body">
-                Based in Atlanta, GA, Trav-Tatz has built a reputation for mastering fine art principles with precision tattooing and beauty services — bringing premium artistry to clients across the Metro region. Every custom tattoo, precise eyebrow shaping, and lamination session is executed with hyper-focus, ensuring your aesthetic goals are not just met, but masterfully exceeded.
+                Based in Atlanta, GA, DESINKS has built a reputation for mastering fine art principles with precision tattooing and beauty services - bringing premium artistry to clients across the Metro region. Every custom tattoo, precise eyebrow shaping, and lamination session is executed with hyper-focus, ensuring your aesthetic goals are not just met, but masterfully exceeded.
               </p>
               <div className="pt-4">
-                <Link href="https://instagram.com" target="_blank" className="btn-ghost inline-flex gap-2 items-center">
-                  Follow on Instagram <ArrowUpRight className="w-4 h-4" />
+                <Link href="https://www.tiktok.com/@desinks?_r=1&_t=ZS-97fVsMSfzxB" target="_blank" className="btn-ghost inline-flex gap-2 items-center">
+                  Follow on TikTok <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -296,7 +296,9 @@ export default function Home() {
         <Reveal>
           <span className="font-mono text-[11px] tracking-[0.2em] uppercase text-text-warm/50 block mb-6">Chat</span>
           <a 
-            href="mailto:bookings@travtatz.com"
+            href="https://wa.me/16054502811"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block group"
           >
             <h2 className="text-4xl md:text-7xl font-display text-text-heading group-hover:text-accent transition-colors duration-300">

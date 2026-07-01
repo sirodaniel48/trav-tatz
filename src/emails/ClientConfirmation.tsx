@@ -27,13 +27,13 @@ export default function ClientConfirmation({
   return (
     <Html>
       <Head />
-      <Preview>Your Trav-Tatz Appointment is Confirmed!</Preview>
+      <Preview>Your DESINKS Appointment is Confirmed!</Preview>
       <Body style={main}>
         <Container style={container}>
           <Heading style={h1}>You're Booked, {clientName}!</Heading>
           
           <Text style={text}>
-            Thank you for booking with Trav-Tatz. Your appointment details are below.
+            Thank you for booking with DESINKS. Your appointment details are below.
           </Text>
 
           <Section style={detailsSection}>
