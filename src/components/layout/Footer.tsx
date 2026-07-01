@@ -9,7 +9,7 @@ export function Footer() {
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <div className="relative w-40 h-16 mb-3 -ml-2">
             <img 
-              src="/logo.jpg" 
+              src="/logo.png" 
               alt="DESINKS" 
               className="w-full h-full object-contain invert mix-blend-screen"
             />

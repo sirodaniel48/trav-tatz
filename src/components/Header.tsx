@@ -26,7 +26,7 @@ export function Header() {
         <div className="flex items-center gap-4">
           <Link href="/" className="relative h-12 w-32 -ml-2 hover:scale-105 transition-transform duration-300">
             <img 
-              src="/logo.jpg" 
+              src="/logo.png" 
               alt="DESINKS" 
               className="w-full h-full object-contain invert mix-blend-screen"
             />
