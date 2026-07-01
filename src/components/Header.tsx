@@ -24,11 +24,11 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto w-full flex justify-between items-center">
         <div className="flex items-center gap-4">
-          <Link href="/" className="relative h-12 w-32 -ml-2 hover:scale-105 transition-transform duration-300">
+          <Link href="/" className="relative h-20 w-48 -ml-2 hover:scale-105 transition-transform duration-300">
             <img 
               src="/logo.png" 
               alt="DESINKS" 
-              className="w-full h-full object-contain invert mix-blend-screen"
+              className="w-full h-full object-contain"
             />
           </Link>
           <span className="hidden lg:inline-block text-xs font-mono text-text-warm/50 tracking-wide mt-2">

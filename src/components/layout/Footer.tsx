@@ -11,7 +11,7 @@ export function Footer() {
             <img 
               src="/logo.png" 
               alt="DESINKS" 
-              className="w-full h-full object-contain invert mix-blend-screen"
+              className="w-full h-full object-contain"
             />
           </div>
           <p className="font-body text-sm text-text-warm/80 mb-2">
