@@ -31,8 +31,11 @@ export default function GalleryPage() {
   // Filter based on active category
   const filteredImages = activeCategory === "All" 
     ? images 
-    : images.filter(img => img.category.toLowerCase() === activeCategory.toLowerCase().replace(/s$/, '')); 
-    // .replace handles "Tattoos" -> "Tattoo" if the db uses singular.
+    : images.filter(img => {
+        const cat = img.category.toLowerCase();
+        const active = activeCategory.toLowerCase();
+        return cat === active || cat === active.replace(/s$/, '') || cat + 's' === active;
+      });
 
   const slides = filteredImages.map(img => ({
     src: img.url,

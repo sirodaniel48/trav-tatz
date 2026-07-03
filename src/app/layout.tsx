@@ -22,8 +22,8 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DESINKS | Tattoos, Lashes & Eyebrows | Atlanta, GA",
-  description: "Premium tattoo and beauty studio in Atlanta, GA. Book online — $35 deposit, guest checkout.",
+  title: "DESINKS | Tattoos, Lashes & Eyebrows | Mobile",
+  description: "Premium tattoo and beauty studio in Mobile. Book online — $35 deposit, guest checkout.",
   openGraph: { locale: "en_US" },
   icons: {
     icon: "/logo.png",
@@ -52,16 +52,16 @@ export default function RootLayout({
               "@type": "BeautySalon",
               "name": "DESINKS",
               "image": "/logo.png",
-              "description": "Premium tattoo and beauty studio in Atlanta, GA.",
+              "description": "Premium mobile tattoo and beauty studio.",
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Atlanta",
-                "addressRegion": "GA",
+                "addressLocality": "Mobile",
+                "addressRegion": "AL",
                 "addressCountry": "US"
               },
               "areaServed": {
                 "@type": "City",
-                "name": "Atlanta"
+                "name": "Mobile"
               },
               "telephone": "+15551234567"
             })

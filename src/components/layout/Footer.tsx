@@ -18,7 +18,7 @@ export function Footer() {
             Tattoos · Lashes · Eyebrows
           </p>
           <p className="font-body text-sm text-text-warm/80 mb-4 flex items-center gap-1 justify-center md:justify-start">
-            📍 Atlanta, GA, USA
+            📍 Mobile Studio, USA
           </p>
           <p className="font-body text-xs text-text-warm/60 italic">
             Bring a valid ID to every appointment.
@@ -81,8 +81,8 @@ export function Footer() {
           </h3>
           <div className="flex flex-col gap-3 items-center md:items-start">
             <div className="font-body text-sm text-text-warm/80 mb-2 text-center md:text-left">
-              Based in Atlanta, GA<br/>
-              Serving clients across Metro Atlanta
+              Based in Mobile<br/>
+              Serving clients across the USA
             </div>
             <a 
               href="mailto:booking@travtatz.com" 

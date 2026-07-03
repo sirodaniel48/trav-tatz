@@ -98,6 +98,16 @@ export function AdminSidebar() {
             <Settings className="w-5 h-5" />
             Settings
           </Link>
+          <Link 
+            href="/admin/services" 
+            onClick={closeSidebar}
+            className={`flex items-center gap-3 px-4 py-3 rounded-sm transition-colors ${
+              pathname === '/admin/services' ? 'bg-accent/20 text-accent font-medium' : 'text-text-warm hover:bg-accent/10 hover:text-accent'
+            }`}
+          >
+            <Settings className="w-5 h-5" />
+            Services
+          </Link>
         </nav>
         
         <div className="p-4 border-t border-border-dark">

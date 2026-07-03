@@ -20,14 +20,14 @@ interface BookingState {
   policyAgreed: boolean;
 }
 
-const SERVICES = [
-  { id: "tattoo_appt", name: "Tattoo Appointment", icon: Scissors, desc: "Starts at $150. Pricing depends on detail.", deposit: 35 },
-  { id: "quarter_sleeve", name: "Quarter Sleeve", icon: Scissors, desc: "Starts at $385. Pricing depends on detail.", deposit: 35 },
-  { id: "half_sleeve", name: "Half Sleeve", icon: Scissors, desc: "Starts at $875. Pricing depends on detail.", deposit: 55 },
-  { id: "cover_up", name: "Cover Up", icon: Scissors, desc: "Starts at $425. Requires more time/attention.", deposit: 75 },
-  { id: "spine", name: "Spine Tattoo", icon: Scissors, desc: "Starts at $300. Pricing depends on detail.", deposit: 35 },
-  { id: "full_sleeve", name: "Full Sleeve", icon: Scissors, desc: "5 hours. $3,500 Total.", deposit: 35 },
-] as const;
+// We will load SERVICES dynamically from the database
+export type DBService = {
+  id: string;
+  name: string;
+  icon: string;
+  description: string;
+  deposit: number;
+};
 
 export default function BookingPage() {
   const [step, setStep] = useState(1);
@@ -40,6 +40,7 @@ export default function BookingPage() {
   const [dateBlockedSlots, setDateBlockedSlots] = useState<string[]>([]);
   const [isFetchingSlots, setIsFetchingSlots] = useState(false);
   const [dataLoaded, setDataLoaded] = useState(false);
+  const [dbServices, setDbServices] = useState<DBService[]>([]);
 
   const [formData, setFormData] = useState<BookingState>({
     service: null,
@@ -58,9 +59,10 @@ export default function BookingPage() {
   useEffect(() => {
     async function loadData() {
       try {
-        const [settingsRes, datesRes] = await Promise.all([
+        const [settingsRes, datesRes, servicesRes] = await Promise.all([
           fetch("/api/public/settings"),
-          fetch("/api/public/blocked-dates")
+          fetch("/api/public/blocked-dates"),
+          fetch("/api/public/services")
         ]);
         
         const settings = await settingsRes.json();
@@ -73,6 +75,11 @@ export default function BookingPage() {
         if (Array.isArray(dates)) {
           // Add local timezone offset so Date constructor doesn't shift the day backwards
           setBlockedDates(dates.map((d: any) => new Date(d.date + "T00:00:00")));
+        }
+
+        const services = await servicesRes.json();
+        if (Array.isArray(services)) {
+          setDbServices(services);
         }
       } catch (e) {
         console.error("Error loading booking data", e);
@@ -210,8 +217,8 @@ export default function BookingPage() {
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             <h2 className="text-2xl mb-6 text-center">Select a Service</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              {SERVICES.map((s) => {
-                const Icon = s.icon;
+              {dbServices.map((s) => {
+                const Icon = s.icon === "Sparkles" ? Sparkles : Scissors;
                 const isSelected = formData.service === s.id;
                 return (
                   <button
@@ -227,7 +234,7 @@ export default function BookingPage() {
                       <Icon className="w-6 h-6" />
                     </div>
                     <h3 className="text-xl mb-1 font-display">{s.name}</h3>
-                    <p className="text-sm text-text-warm/60 mb-2">{s.desc}</p>
+                    <p className="text-sm text-text-warm/60 mb-2">{s.description}</p>
                     <p className="text-sm font-bold text-accent">${s.deposit} Deposit</p>
                   </button>
                 );
@@ -450,7 +457,7 @@ export default function BookingPage() {
 
         {/* Step 4: Review & Pay */}
         {step === 4 && (() => {
-          const selectedServiceDef = SERVICES.find(s => s.id === formData.service);
+          const selectedServiceDef = dbServices.find(s => s.id === formData.service);
           const activeDepositAmount = selectedServiceDef ? selectedServiceDef.deposit : depositAmount;
           
           return (

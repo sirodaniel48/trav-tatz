@@ -32,7 +32,7 @@ export function Header() {
             />
           </Link>
           <span className="hidden lg:inline-block text-xs font-mono text-text-warm/50 tracking-wide mt-2">
-            Atlanta, GA · USA
+            Mobile Studio · USA
           </span>
         </div>
         <nav className="hidden md:flex items-center gap-8 font-mono text-sm tracking-widest uppercase">

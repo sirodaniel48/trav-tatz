@@ -101,9 +101,8 @@ export default function Home() {
             variants={heroFadeUp}
             className="text-[clamp(40px,6vw,72px)] leading-[1.1] mb-6 font-display"
           >
-            Your Art.<br/>
-            <span className="italic font-light text-text-warm/90">Your Appointment.</span><br/>
-            No Hassle.
+            Mobile Tattoo &<br/>
+            <span className="italic font-light text-text-warm/90">Brow Studio</span>
           </motion.h1>
 
           <motion.p
@@ -113,8 +112,10 @@ export default function Home() {
             variants={heroFadeUp}
             className="text-lg md:text-xl text-text-warm/60 max-w-xl mx-auto mb-10 font-body"
           >
-            Premium tattoo, lashes, and eyebrows studio. We bring your vision to life with precision and care in an environment built on excellence.
+            House Calls & Mobile Truck Available
           </motion.p>
+
+          {/* Remove the original p tag text here as it's replaced above */}
 
           <motion.div
             initial="hidden"
@@ -216,7 +217,10 @@ export default function Home() {
               <span className="font-mono text-[11px] tracking-[0.2em] uppercase text-text-warm/50 block mb-4">About the Studio</span>
               <h2 className="text-4xl md:text-5xl font-display leading-tight">Mastering the Craft</h2>
               <p className="text-text-warm/70 text-lg leading-relaxed font-body">
-                Based in Atlanta, GA, DESINKS has built a reputation for mastering fine art principles with precision tattooing and beauty services - bringing premium artistry to clients across the Metro region. Every custom tattoo, precise eyebrow shaping, and lamination session is executed with hyper-focus, ensuring your aesthetic goals are not just met, but masterfully exceeded.
+                Welcome to The Studio Mobile!<br/><br/>
+                I’m a traveling artist specializing in premium eyebrows and tattoos, bringing the studio directly to you across the USA. Whether you want flawless microblading or powder brows, or a custom tattoo, I deliver professional results in the comfort of your home or inside my fully equipped mobile tattoo truck.<br/><br/>
+                No need to travel — I come to you with everything needed for a clean, relaxing, and high-quality experience. From beautiful, long-lasting eyebrows to detailed custom tattoos, I focus on precision, artistry, and client comfort.<br/><br/>
+                House calls and mobile studio sessions available. Book your appointment today and let’s create something beautiful!
               </p>
               <div className="pt-4">
                 <Link href="https://www.tiktok.com/@desinks?_r=1&_t=ZS-97fVsMSfzxB" target="_blank" className="btn-ghost inline-flex gap-2 items-center">
@@ -246,7 +250,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. FAQ Accordion */}
+      {/* 4.5. Booking Hours */}
+      <section className="py-24 px-6 md:px-12 max-w-3xl mx-auto w-full border-t border-border-dark text-center">
+        <Reveal>
+          <div className="mb-10">
+            <span className="font-mono text-[11px] tracking-[0.2em] uppercase text-text-warm/50 block mb-4">Availability</span>
+            <h2 className="text-4xl md:text-5xl font-display text-accent">Booking Hours</h2>
+          </div>
+          <p className="text-lg text-text-warm/80 font-body leading-relaxed mb-6">
+            Available 24/7 by appointment only.<br/>
+            Text or email to schedule.
+          </p>
+          <p className="text-base text-text-warm/60 font-body leading-relaxed max-w-2xl mx-auto">
+            I travel with my fully equipped mobile studio and offer private house calls for both tattoos and eyebrows. Please book in advance when possible for best availability.
+          </p>
+        </Reveal>
+      </section>
+
+      {/* 5. FAQ Accordion */}
       <section className="py-24 px-6 md:px-12 max-w-3xl mx-auto w-full border-t border-border-dark">
         <Reveal>
           <div className="text-center mb-16">

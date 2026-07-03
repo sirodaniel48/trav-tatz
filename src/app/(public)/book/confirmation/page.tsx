@@ -27,7 +27,7 @@ export default function BookingConfirmationPage() {
               Return Home
             </Link>
             <p className="text-sm text-text-warm/50 mt-8">
-              Questions? Contact us at <a href="mailto:bookings@travtatz.com" className="text-accent hover:underline">bookings@travtatz.com</a>
+              Questions? Contact us at <a href="mailto:deshawntattoos@gmail.com" className="text-accent hover:underline">deshawntattoos@gmail.com</a>
             </p>
           </div>
         </div>
